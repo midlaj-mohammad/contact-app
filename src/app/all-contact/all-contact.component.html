@@ -1,0 +1,70 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <h1>Contact Management Application 
+            <a routerLink="add-contact" class="btn btn-danger"><i class="fa-solid fa-user-plus"></i>Add New</a>
+            </h1>
+            <p class="mt-4 " style="text-align: justify;">This is Dummy Data: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+               Deleniti earum dolores maiores! Possimus eius minus, facilis doloribus quas veritatis sapiente,
+               laboriosam ullam, doloremque sed iusto tempora expedita distinctio necessitatibus quidem.
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis fuga iusto, reprehenderit dolor corrupti beatae ipsa quam? Porro dolor labore mollitia commodi adipisci? Quibusdam suscipit cupiditate quia omnis, repellat nisi.
+            </p>
+            <div class="row">
+                <div class="col-6">
+                    <form>
+                   
+                        <input name="searchKey" [(ngModel)]="searchKey" placeholder="search contact" type="text" class="form-control mt-2">
+                    </form>
+                </div>
+                <!-- <div class="col-6">
+                    <input type="button" value="Search" class="btn btn-primary mt-2">
+                </div> -->
+            </div>
+            <!-- card design -->
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-lg-6 mt-3" *ngFor="let contact of allContact | filter : searchKey :'name' ">
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-body">
+                               <div class="row align-items-center">
+                                 <!-- divide into 3 parts of a card -->
+                                
+                                 <div class="col-md-3">
+                                    <!-- 1st part -->
+                                    <img height="130px" width="110px" [src]="contact.photo">
+                                 </div>
+                                 <div class="col-md-8">
+                                    <!-- 2nd part -->
+                                     <ul class="list-group">
+                                         <li class="list-group-item">Name : <b>{{contact.name}}</b></li>
+                                         <li class="list-group-item">Mobile : <b>{{contact.mobile}}</b></li>
+                                         <li class="list-group-item">Email : <b>{{contact.email}}</b></li>
+                                     </ul>
+                                 </div>
+                                 <div class="col-md-1 d-flex flex-column justify-content-center align-items-center">
+                                    <!-- 3rd part -->
+                                    <!-- view -->
+                                    <a routerLink="view-contact/{{contact.id}}" class="btn btn-success mt-1">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <!-- edit -->
+                                    <a routerLink="edit-contact/{{contact.id}}" class="btn btn-warning mt-1">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </a>
+                                    <!-- delete -->
+                                    <button (click)="deleteContact(contact.id)"  class="btn btn-danger mt-1">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                 </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

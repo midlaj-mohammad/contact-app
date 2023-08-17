@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@1,900&family=Sofia+Sans&family=Solway:wght@700&display=swap');
+body{
+    font-family: 'Sofia Sans', sans-serif;
+}
